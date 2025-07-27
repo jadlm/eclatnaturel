@@ -288,3 +288,11 @@ document.querySelectorAll('.badge').forEach(badge => {
 
 // Initialisation
 updateCartDisplay();
+
+    const menuBtn = document.querySelector(".mobile-menu");
+    const body = document.body;
+
+    menuBtn.addEventListener("click", () => {
+        body.classList.toggle("nav-open");
+    });
+

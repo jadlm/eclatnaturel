@@ -1031,3 +1031,46 @@ opacity: 0.95; /* facultatif : pour laisser voir un peu le dégradé derrière *
         gap: 1rem;
     }
 }
+/* Cacher le menu sur mobile */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--background-color, #fff);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 1rem 0;
+        z-index: 10;
+    }
+
+    body.nav-open .nav-links {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: inline-block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    /* Cacher le menu burger sur desktop */
+    .mobile-menu {
+        display: block;
+    }
+
+    /* Cache les liens sur desktop (sauf si ouvert) */
+    .nav-links.desktop {
+        display: none;
+    }
+}
