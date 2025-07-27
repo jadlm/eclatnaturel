@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits - Éclat Naturel</title>
+    <link rel="stylesheet" href="product.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Éclat Naturel</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="#" class="nav-link active">Produits</a></li>
+                <li><a href="#" class="nav-link">À propos</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" title="Changer le thème">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="cart-btn" title="Panier">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Products Header -->
+        <section class="products-header">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="#">Accueil</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Produits</span>
+                </div>
+                <h1>Nos Produits</h1>
+                <p>Découvrez notre gamme complète de cosmétiques bio et naturels</p>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <div class="filters-row">
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-filter="all">Tous les produits</button>
+                        <button class="filter-btn" data-filter="skincare">Soins visage</button>
+                        <button class="filter-btn" data-filter="makeup">Maquillage</button>
+                        <button class="filter-btn" data-filter="hair">Cheveux</button>
+                        <button class="filter-btn" data-filter="body">Corps</button>
+                    </div>
+                    
+                    <div class="sort-controls">
+                        <select class="sort-select" id="sort-select">
+                            <option value="default">Trier par</option>
+                            <option value="name-asc">Nom A-Z</option>
+                            <option value="name-desc">Nom Z-A</option>
+                            <option value="price-asc">Prix croissant</option>
+                            <option value="price-desc">Prix décroissant</option>
+                            <option value="rating">Note client</option>
+                            <option value="newest">Nouveautés</option>
+                        </select>
+                        
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid" title="Vue grille">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list" title="Vue liste">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-stats">
+                    <div class="results-count">
+                        <span id="results-count">12</span> produits trouvés
+                    </div>
+                </div>
+
+                <!-- Loading Animation -->
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Chargement des produits...</p>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-category="skincare" data-price="45" data-name="Sérum Éclat Bio" data-rating="4.8">
+                        <div class="product-badge new">Nouveau</div>
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Soins visage</div>
+                            <h3 class="product-name">Sérum Éclat Bio</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(124 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">45,00 €</span>
+                            </div>
+                            <p class="product-description">Un sérum révolutionnaire aux actifs naturels pour une peau éclatante et rajeunie</p>
+                            <button class="add-to-cart" data-product="Sérum Éclat Bio" data-price="45.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-category="skincare" data-price="32" data-name="Crème Hydratante" data-rating="4.6">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Soins visage</div>
+                            <h3 class="product-name">Crème Hydratante</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(89 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">32,00 €</span>
+                            </div>
+                            <p class="product-description">Hydratation intense 24h avec des ingrédients 100% naturels pour une peau douce</p>
+                            <button class="add-to-cart" data-product="Crème Hydratante" data-price="32.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-category="makeup" data-price="28" data-name="Rouge à Lèvres Bio" data-rating="4.9">
+                        <div class="product-badge sale">-15%</div>
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Maquillage</div>
+                            <h3 class="product-name">Rouge à Lèvres Bio</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(203 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">28,00 €</span>
+                                <span class="original-price">33,00 €</span>
+                                <span class="discount">-15%</span>
+                            </div>
+                            <p class="product-description">Couleur intense et longue tenue, formule enrichie en huiles végétales</p>
+                            <button class="add-to-cart" data-product="Rouge à Lèvres Bio" data-price="28.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card" data-category="skincare" data-price="38" data-name="Masque Purifiant" data-rating="4.7">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Soins visage</div>
+                            <h3 class="product-name">Masque Purifiant</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(156 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">38,00 €</span>
+                            </div>
+                            <p class="product-description">Masque à l'argile verte pour purifier et matifier la peau en douceur</p>
+                            <button class="add-to-cart" data-product="Masque Purifiant" data-price="38.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card" data-category="makeup" data-price="42" data-name="Fond de Teint Bio" data-rating="4.5">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Maquillage</div>
+                            <h3 class="product-name">Fond de Teint Bio</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(67 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">42,00 €</span>
+                            </div>
+                            <p class="product-description">Couvrance parfaite et tenue longue durée, enrichi en actifs hydratants</p>
+                            <button class="add-to-cart" data-product="Fond de Teint Bio" data-price="42.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card" data-category="hair" data-price="22" data-name="Shampoing Naturel" data-rating="4.4">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Cheveux</div>
+                            <h3 class="product-name">Shampoing Naturel</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="far fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(91 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">22,00 €</span>
+                            </div>
+                            <p class="product-description">Shampoing aux huiles essentielles pour cheveux brillants et soyeux</p>
+                            <button class="add-to-cart" data-product="Shampoing Naturel" data-price="22.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card" data-category="skincare" data-price="35" data-name="Huile de Jojoba" data-rating="4.8">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Soins visage</div>
+                            <h3 class="product-name">Huile de Jojoba</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(178 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">35,00 €</span>
+                            </div>
+                            <p class="product-description">Huile pure de jojoba pour nourrir et protéger votre peau naturellement</p>
+                            <button class="add-to-cart" data-product="Huile de Jojoba" data-price="35.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card" data-category="makeup" data-price="30" data-name="Mascara Volume" data-rating="4.6">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Maquillage</div>
+                            <h3 class="product-name">Mascara Volume</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(145 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">30,00 €</span>
+                            </div>
+                            <p class="product-description">Mascara volumateur à la cire de carnauba pour des cils XXL</p>
+                            <button class="add-to-cart" data-product="Mascara Volume" data-price="30.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card" data-category="hair" data-price="24" data-name="Après-Shampoing" data-rating="4.3">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Cheveux</div>
+                            <h3 class="product-name">Après-Shampoing</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="far fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(73 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">24,00 €</span>
+                            </div>
+                            <p class="product-description">Soin démêlant aux protéines de soie pour cheveux doux et brillants</p>
+                            <button class="add-to-cart" data-product="Après-Shampoing" data-price="24.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-card" data-category="body" data-price="26" data-name="Lotion Corps" data-rating="4.7">
+                        <div class="product-badge new">Nouveau</div>
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Corps</div>
+                            <h3 class="product-name">Lotion Corps</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(95 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">26,00 €</span>
+                            </div>
+                            <p class="product-description">Lotion hydratante au beurre de karité pour une peau douce toute la journée</p>
+                            <button class="add-to-cart" data-product="Lotion Corps" data-price="26.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 11 -->
+                    <div class="product-card" data-category="makeup" data-price="25" data-name="Nettoyant Doux" data-rating="4.5">
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Soins visage</div>
+                            <h3 class="product-name">Nettoyant Doux</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(112 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">25,00 €</span>
+                            </div>
+                            <p class="product-description">Gel nettoyant doux pour tous types de peaux, aux extraits de camomille</p>
+                            <button class="add-to-cart" data-product="Nettoyant Doux" data-price="25.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 12 -->
+                    <div class="product-card" data-category="body" data-price="29" data-name="Gommage Corps" data-rating="4.8">
+                        <div class="product-badge sale">-20%</div>
+                        <div class="product-image"></div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Favori">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Aperçu rapide">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Corps</div>
+                            <h3 class="product-name">Gommage Corps</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                    <i class="fas fa-star star"></i>
+                                </div>
+                                <span class="rating-text">(167 avis)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">29,00 €</span>
+                                <span class="original-price">36,00 €</span>
+                                <span class="discount">-20%</span>
+                            </div>
+                            <p class="product-description">Gommage exfoliant aux grains de sucre et huile d'argan</p>
+                            <button class="add-to-cart" data-product="Gommage Corps" data-price="29.00">
+                                <i class="fas fa-shopping-cart"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mini Cart -->
+    <div class="mini-cart" id="mini-cart">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="cart-items">
+            <p style="text-align: center; color: var(--text-light); margin-top: 2rem;">Votre panier est vide</p>
+        </div>
+        <div class="cart-total">
+            <div class="cart-total-amount">Total: 0,00 €</div>
+            <button class="cta-btn" style="width: 100%;">Commander</button>
+        </div>
+    </div>
+
+  <script src="product.js" ></script>
+</body>
+</html>
