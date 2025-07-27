@@ -1063,7 +1063,7 @@ opacity: 0.95; /* facultatif : pour laisser voir un peu le dégradé derrière *
         color: inherit;
         cursor: pointer;
     }
-
+    
     /* Cacher le menu burger sur desktop */
     .mobile-menu {
         display: block;
@@ -1074,3 +1074,5 @@ opacity: 0.95; /* facultatif : pour laisser voir un peu le dégradé derrière *
         display: none;
     }
 }
+
+  
