@@ -100,17 +100,16 @@ addToCartBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const productName = btn.getAttribute('data-product');
         const price = btn.getAttribute('data-price');
+
+        // Ajout au panier
         addToCart(productName, price);
+
+        // Lecture du son
+        addSound.currentTime = 0;
+        addSound.play();
     });
 });
 
-cartBtn.addEventListener('click', () => {
-    miniCart.classList.add('show');
-});
-
-cartClose.addEventListener('click', () => {
-    miniCart.classList.remove('show');
-});
 
 // Filtres par catégorie
 filterBtns.forEach(btn => {
@@ -452,3 +451,6 @@ filterBtns.forEach(btn => {
         filterProductsWithAnimation();
     });
 });
+const addSound = document.getElementById('add-sound');
+
+// Cibler tous les boutons "Ajouter au panier"
